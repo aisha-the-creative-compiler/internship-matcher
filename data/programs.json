@@ -1,0 +1,56 @@
+{
+  "_README": "REPLACE THIS FILE WITH THE OFFICIAL INTERNLYTIC PROGRAMS. The entries below are SAMPLE placeholders so the app runs. When you have the real programs and apply links, edit them here and set catalogue_verified to true.",
+  "catalogue_verified": false,
+  "programs": [
+    {
+      "id": 1,
+      "name": "Frontend Development Internship",
+      "track": "Web Development",
+      "required_skills": {"HTML": 3, "CSS": 3, "JavaScript": 3, "Responsive Layouts": 2, "React": 2, "Git": 1},
+      "min_level": "beginner",
+      "prerequisites": ["Basic understanding of how websites work", "A laptop with a code editor installed"],
+      "status": "active",
+      "apply_url": ""
+    },
+    {
+      "id": 2,
+      "name": "Backend Development Internship",
+      "track": "Web Development",
+      "required_skills": {"Python": 3, "Flask": 2, "REST APIs": 3, "SQL": 2, "Git": 1},
+      "min_level": "beginner",
+      "prerequisites": ["Basic programming knowledge in Python", "Familiarity with the command line"],
+      "status": "active",
+      "apply_url": ""
+    },
+    {
+      "id": 3,
+      "name": "Data Analysis Internship",
+      "track": "Data Science",
+      "required_skills": {"Python": 3, "Pandas": 3, "SQL": 2, "Data Visualization": 2, "Excel": 1, "Statistics": 2},
+      "min_level": "beginner",
+      "prerequisites": ["Basic statistics knowledge", "Comfort working with spreadsheets or tabular data"],
+      "status": "active",
+      "apply_url": ""
+    },
+    {
+      "id": 4,
+      "name": "AI & Machine Learning Internship",
+      "track": "AI & ML",
+      "required_skills": {"Python": 3, "Machine Learning": 3, "NumPy": 2, "Pandas": 2, "scikit-learn": 2, "Statistics": 2, "Git": 1},
+      "min_level": "intermediate",
+      "prerequisites": ["Completed at least one ML course or project", "Working knowledge of Python"],
+      "status": "active",
+      "apply_url": ""
+    },
+    {
+      "id": 5,
+      "name": "Full-Stack Web Development Internship",
+      "track": "Web Development",
+      "required_skills": {"HTML": 2, "CSS": 2, "JavaScript": 3, "React": 2, "Node.js": 2, "SQL": 2, "REST APIs": 2, "Git": 1},
+      "min_level": "intermediate",
+      "prerequisites": ["At least one completed web project", "Basic knowledge of databases"],
+      "status": "active",
+      "apply_url": ""
+    }
+  ]
+}

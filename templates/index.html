@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Internlytic | AI Internship Matcher</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">Intern<span>lytic</span></div>
+      <nav>
+        <a href="#catalogue">Programs</a>
+        <a href="#find" class="btn btn-small">Find My Internship</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- A. Landing -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">AI &amp; ML Internship Track</p>
+        <h1>Find the internship that fits your skills</h1>
+        <p class="lead">Upload your CV or pick your skills. We compare them with real program requirements and show you exactly why each program matches and what to learn next.</p>
+        <div class="cta-row">
+          <a href="#find" class="btn">Find My Internship</a>
+          <a href="#catalogue" class="btn btn-ghost">Explore the catalogue</a>
+        </div>
+        <p class="privacy">🔒 Privacy: your CV is read in memory to find skills and is never saved or shared. Nothing you enter is stored.</p>
+      </div>
+    </section>
+
+    <!-- B. Profile input -->
+    <section id="find" class="wrap section">
+      <h2>1. Build your profile</h2>
+
+      <div class="card">
+        <h3>Upload your CV <span class="muted">(optional)</span></h3>
+        <p class="muted">PDF or DOCX, up to 5 MB. We will pre-select the skills we find so you can review them.</p>
+        <input type="file" id="cv-file" accept=".pdf,.docx" aria-label="Upload CV">
+        <button id="upload-btn" class="btn btn-small" type="button">Read my CV</button>
+        <div id="upload-status" class="status" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="card">
+        <h3>Select your skills</h3>
+        <p class="muted">Tap every skill you are comfortable with. <strong id="skill-count">0 selected</strong></p>
+        <div id="skills-box" class="skills-box"><p class="muted">Loading skills…</p></div>
+      </div>
+
+      <div class="card two-col">
+        <div>
+          <h3>Experience level</h3>
+          <select id="level" aria-label="Experience level">
+            <option value="beginner">Beginner (new, class projects)</option>
+            <option value="intermediate">Intermediate (1+ year or solid projects)</option>
+            <option value="advanced">Advanced (3+ years or professional work)</option>
+          </select>
+        </div>
+        <div>
+          <h3>Interests <span class="muted">(optional)</span></h3>
+          <div id="interests" class="chips">
+            <label class="chip"><input type="checkbox" value="Web Development"><span>Web Development</span></label>
+            <label class="chip"><input type="checkbox" value="Data Science"><span>Data Science</span></label>
+            <label class="chip"><input type="checkbox" value="AI & ML"><span>AI &amp; ML</span></label>
+          </div>
+          <p class="muted small">Interests only break ties between equal scores.</p>
+        </div>
+      </div>
+
+      <button id="match-btn" class="btn btn-big" type="button">Match me with programs</button>
+      <div id="match-status" class="status" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- D. Results -->
+    <section id="results-section" class="wrap section" hidden>
+      <h2>2. Your top matches</h2>
+      <div id="catalogue-warning" class="notice" hidden></div>
+      <div id="results"></div>
+      <div id="excluded" class="card" hidden></div>
+    </section>
+
+    <!-- Catalogue -->
+    <section id="catalogue" class="wrap section">
+      <h2>Program catalogue</h2>
+      <div id="catalogue-note" class="notice" hidden></div>
+      <div id="catalogue-list" class="grid"><p class="muted">Loading programs…</p></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">Internlytic Technologies © 2026 · AI &amp; Machine Learning Internship Track</div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
