@@ -270,7 +270,79 @@ async function loadCatalogue() {
   }
 }
 
+// ---------- Paste text ----------
+async function analyseText() {
+  const status = $("text-status");
+  const text = $("cv-text").value;
+  if (!text.trim()) return setStatus(status, "Please paste some text from your CV first.", "error");
+  const btn = $("text-btn");
+  btn.disabled = true;
+  setStatus(status, "Reading your text…", "", true);
+  try {
+    const data = await getJSON("/api/parse-text", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text }),
+    });
+    data.skills.forEach((s) => setSkillChecked(s, true));
+    updateCount();
+    $("level").value = data.suggested_level;
+    if (data.skills.length === 0) {
+      setStatus(status, "No known skills found in that text. Please select your skills below.", "error");
+    } else {
+      setStatus(status, "Found " + data.skills.length + " skills: " + data.skills.join(", ") +
+        ". Review the selection below.", "ok");
+    }
+  } catch (e) {
+    setStatus(status, e.message, "error");
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+// ---------- Demo profiles ----------
+const DEMO_PROFILES = [
+  { name: "AI/ML student", level: "intermediate",
+    note: "Python, ML, data libraries",
+    skills: ["Python", "Pandas", "NumPy", "Machine Learning", "scikit-learn", "Statistics", "Git"] },
+  { name: "Web developer", level: "beginner",
+    note: "HTML, CSS, JavaScript",
+    skills: ["HTML", "CSS", "JavaScript", "Git"] },
+  { name: "Data analyst", level: "beginner",
+    note: "SQL, Excel, charts",
+    skills: ["SQL", "Excel", "Python", "Data Visualization"] },
+  { name: "UI/UX designer", level: "beginner",
+    note: "Figma, wireframes, user research",
+    skills: ["UI/UX Design", "Figma", "Wireframing", "Prototyping", "User Research"] },
+  { name: "Full-stack builder", level: "intermediate",
+    note: "React, Node, SQL, APIs",
+    skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "SQL", "REST APIs", "Git"] },
+];
+
+function loadDemoProfile(profile) {
+  document.querySelectorAll("#skills-box input[data-skill]").forEach((i) => (i.checked = false));
+  selected.clear();
+  profile.skills.forEach((s) => setSkillChecked(s, true));
+  updateCount();
+  $("level").value = profile.level;
+  setStatus($("demo-status"), "Loaded the \"" + profile.name + "\" profile. Now press \"Match me with programs\".", "ok");
+}
+
+function renderDemoProfiles() {
+  const box = $("demo-profiles");
+  DEMO_PROFILES.forEach((p) => {
+    const b = el("button", "demo-btn");
+    b.type = "button";
+    b.appendChild(el("strong", null, p.name));
+    b.appendChild(el("span", null, p.note));
+    b.addEventListener("click", () => loadDemoProfile(p));
+    box.appendChild(b);
+  });
+}
+
 $("upload-btn").addEventListener("click", uploadCV);
+$("text-btn").addEventListener("click", analyseText);
+renderDemoProfiles();
 $("match-btn").addEventListener("click", runMatch);
 loadSkills();
 loadCatalogue();

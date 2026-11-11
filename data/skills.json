@@ -1,31 +1,361 @@
 [
-  {"name": "HTML", "category": "Web", "aliases": ["html5", "html 5"]},
-  {"name": "CSS", "category": "Web", "aliases": ["css3", "css 3", "tailwind", "bootstrap", "sass", "scss"]},
-  {"name": "JavaScript", "category": "Web", "aliases": ["js", "es6", "ecmascript", "vanilla js"]},
-  {"name": "TypeScript", "category": "Web", "aliases": ["ts"]},
-  {"name": "React", "category": "Web", "aliases": ["react.js", "reactjs", "react js", "next.js", "nextjs"]},
-  {"name": "Responsive Layouts", "category": "Web", "aliases": ["responsive design", "responsive web design", "media queries", "mobile-first", "mobile first", "flexbox", "css grid"]},
-  {"name": "Node.js", "category": "Web", "aliases": ["node", "nodejs", "node js", "express.js", "expressjs"]},
-  {"name": "REST APIs", "category": "Web", "aliases": ["rest api", "rest", "restful", "restful api", "restful apis", "api development", "web api", "web apis"]},
-  {"name": "Flask", "category": "Web", "aliases": ["flask framework"]},
-  {"name": "Django", "category": "Web", "aliases": ["django framework", "django rest framework"]},
-  {"name": "Git", "category": "Tools", "aliases": ["github", "gitlab", "version control", "git/github"]},
-  {"name": "SQL", "category": "Data", "aliases": ["mysql", "postgresql", "postgres", "sqlite", "sql server", "t-sql"]},
-  {"name": "Excel", "category": "Data", "aliases": ["microsoft excel", "ms excel", "google sheets", "spreadsheets"]},
-  {"name": "Power BI", "category": "Data", "aliases": ["powerbi", "power-bi"]},
-  {"name": "Tableau", "category": "Data", "aliases": []},
-  {"name": "Data Visualization", "category": "Data", "aliases": ["data visualisation", "data viz", "matplotlib", "seaborn", "plotly", "dashboards"]},
-  {"name": "Data Cleaning", "category": "Data", "aliases": ["data preprocessing", "data wrangling", "data preparation", "data cleansing"]},
-  {"name": "Statistics", "category": "Data", "aliases": ["statistical analysis", "probability", "hypothesis testing", "descriptive statistics"]},
-  {"name": "Python", "category": "AI & ML", "aliases": ["python3", "python 3"]},
-  {"name": "Pandas", "category": "AI & ML", "aliases": []},
-  {"name": "NumPy", "category": "AI & ML", "aliases": ["numpy"]},
-  {"name": "Machine Learning", "category": "AI & ML", "aliases": ["ml", "supervised learning", "unsupervised learning", "regression", "classification", "random forest", "xgboost"]},
-  {"name": "scikit-learn", "category": "AI & ML", "aliases": ["sklearn", "scikit learn"]},
-  {"name": "Deep Learning", "category": "AI & ML", "aliases": ["neural networks", "neural network", "cnn", "rnn", "lstm"]},
-  {"name": "TensorFlow", "category": "AI & ML", "aliases": ["keras"]},
-  {"name": "PyTorch", "category": "AI & ML", "aliases": ["torch"]},
-  {"name": "NLP", "category": "AI & ML", "aliases": ["natural language processing", "text mining", "transformers", "hugging face", "huggingface"]},
-  {"name": "Computer Vision", "category": "AI & ML", "aliases": ["opencv", "image processing", "image classification", "object detection"]},
-  {"name": "Jupyter", "category": "Tools", "aliases": ["jupyter notebook", "google colab", "colab"]}
+ {
+  "name": "HTML",
+  "category": "Web",
+  "aliases": [
+   "html5",
+   "html 5"
+  ]
+ },
+ {
+  "name": "CSS",
+  "category": "Web",
+  "aliases": [
+   "css3",
+   "css 3",
+   "tailwind",
+   "bootstrap",
+   "sass",
+   "scss"
+  ]
+ },
+ {
+  "name": "JavaScript",
+  "category": "Web",
+  "aliases": [
+   "js",
+   "es6",
+   "ecmascript",
+   "vanilla js"
+  ]
+ },
+ {
+  "name": "TypeScript",
+  "category": "Web",
+  "aliases": [
+   "ts"
+  ]
+ },
+ {
+  "name": "React",
+  "category": "Web",
+  "aliases": [
+   "react.js",
+   "reactjs",
+   "react js",
+   "next.js",
+   "nextjs"
+  ]
+ },
+ {
+  "name": "Responsive Layouts",
+  "category": "Web",
+  "aliases": [
+   "responsive design",
+   "responsive web design",
+   "media queries",
+   "mobile-first",
+   "mobile first",
+   "flexbox",
+   "css grid"
+  ]
+ },
+ {
+  "name": "Node.js",
+  "category": "Web",
+  "aliases": [
+   "node",
+   "nodejs",
+   "node js",
+   "express.js",
+   "expressjs"
+  ]
+ },
+ {
+  "name": "REST APIs",
+  "category": "Web",
+  "aliases": [
+   "rest api",
+   "rest",
+   "restful",
+   "restful api",
+   "restful apis",
+   "api development",
+   "web api",
+   "web apis"
+  ]
+ },
+ {
+  "name": "Flask",
+  "category": "Web",
+  "aliases": [
+   "flask framework"
+  ]
+ },
+ {
+  "name": "Django",
+  "category": "Web",
+  "aliases": [
+   "django framework",
+   "django rest framework"
+  ]
+ },
+ {
+  "name": "Git",
+  "category": "Tools",
+  "aliases": [
+   "github",
+   "gitlab",
+   "version control",
+   "git/github"
+  ]
+ },
+ {
+  "name": "SQL",
+  "category": "Data",
+  "aliases": [
+   "mysql",
+   "postgresql",
+   "postgres",
+   "sqlite",
+   "sql server",
+   "t-sql"
+  ]
+ },
+ {
+  "name": "Excel",
+  "category": "Data",
+  "aliases": [
+   "microsoft excel",
+   "ms excel",
+   "google sheets",
+   "spreadsheets"
+  ]
+ },
+ {
+  "name": "Power BI",
+  "category": "Data",
+  "aliases": [
+   "powerbi",
+   "power-bi"
+  ]
+ },
+ {
+  "name": "Tableau",
+  "category": "Data",
+  "aliases": []
+ },
+ {
+  "name": "Data Visualization",
+  "category": "Data",
+  "aliases": [
+   "data visualisation",
+   "data viz",
+   "matplotlib",
+   "seaborn",
+   "plotly",
+   "dashboards"
+  ]
+ },
+ {
+  "name": "Data Cleaning",
+  "category": "Data",
+  "aliases": [
+   "data preprocessing",
+   "data wrangling",
+   "data preparation",
+   "data cleansing"
+  ]
+ },
+ {
+  "name": "Statistics",
+  "category": "Data",
+  "aliases": [
+   "statistical analysis",
+   "probability",
+   "hypothesis testing",
+   "descriptive statistics"
+  ]
+ },
+ {
+  "name": "Python",
+  "category": "AI & ML",
+  "aliases": [
+   "python3",
+   "python 3"
+  ]
+ },
+ {
+  "name": "Pandas",
+  "category": "AI & ML",
+  "aliases": []
+ },
+ {
+  "name": "NumPy",
+  "category": "AI & ML",
+  "aliases": [
+   "numpy"
+  ]
+ },
+ {
+  "name": "Machine Learning",
+  "category": "AI & ML",
+  "aliases": [
+   "ml",
+   "supervised learning",
+   "unsupervised learning",
+   "regression",
+   "classification",
+   "random forest",
+   "xgboost"
+  ]
+ },
+ {
+  "name": "scikit-learn",
+  "category": "AI & ML",
+  "aliases": [
+   "sklearn",
+   "scikit learn"
+  ]
+ },
+ {
+  "name": "Deep Learning",
+  "category": "AI & ML",
+  "aliases": [
+   "neural networks",
+   "neural network",
+   "cnn",
+   "rnn",
+   "lstm"
+  ]
+ },
+ {
+  "name": "TensorFlow",
+  "category": "AI & ML",
+  "aliases": [
+   "keras"
+  ]
+ },
+ {
+  "name": "PyTorch",
+  "category": "AI & ML",
+  "aliases": [
+   "torch"
+  ]
+ },
+ {
+  "name": "NLP",
+  "category": "AI & ML",
+  "aliases": [
+   "natural language processing",
+   "text mining",
+   "transformers",
+   "hugging face",
+   "huggingface"
+  ]
+ },
+ {
+  "name": "Computer Vision",
+  "category": "AI & ML",
+  "aliases": [
+   "opencv",
+   "image processing",
+   "image classification",
+   "object detection"
+  ]
+ },
+ {
+  "name": "Jupyter",
+  "category": "Tools",
+  "aliases": [
+   "jupyter notebook",
+   "google colab",
+   "colab"
+  ]
+ },
+ {
+  "name": "UI/UX Design",
+  "category": "Design",
+  "aliases": [
+   "ui design",
+   "ux design",
+   "ui/ux",
+   "ux/ui",
+   "user interface design",
+   "user experience",
+   "interaction design"
+  ]
+ },
+ {
+  "name": "Figma",
+  "category": "Design",
+  "aliases": [
+   "adobe xd",
+   "sketch app"
+  ]
+ },
+ {
+  "name": "Wireframing",
+  "category": "Design",
+  "aliases": [
+   "wireframes",
+   "wireframe",
+   "low-fidelity",
+   "mockups"
+  ]
+ },
+ {
+  "name": "Prototyping",
+  "category": "Design",
+  "aliases": [
+   "prototype",
+   "prototypes",
+   "interactive prototypes"
+  ]
+ },
+ {
+  "name": "User Research",
+  "category": "Design",
+  "aliases": [
+   "ux research",
+   "user interviews",
+   "personas",
+   "user testing"
+  ]
+ },
+ {
+  "name": "Usability Testing",
+  "category": "Design",
+  "aliases": [
+   "usability studies",
+   "usability test",
+   "a/b testing"
+  ]
+ },
+ {
+  "name": "Prompt Engineering",
+  "category": "AI & ML",
+  "aliases": [
+   "prompt design",
+   "prompting",
+   "prompt writing",
+   "prompt engineer"
+  ]
+ },
+ {
+  "name": "LLMs",
+  "category": "AI & ML",
+  "aliases": [
+   "llm",
+   "large language models",
+   "large language model",
+   "chatgpt",
+   "openai",
+   "gemini",
+   "claude",
+   "langchain",
+   "generative ai",
+   "genai"
+  ]
+ }
 ]
