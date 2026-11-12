@@ -93,3 +93,5 @@ th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line
 .prog-meta { display: flex; align-items: center; gap: 9px; margin-bottom: 8px; }
 .verified { display: inline-block; border-radius: 999px; padding: 4px 9px; background: #e6f6ec; color: #067647; font-size: .75rem; font-weight: 800; }
 .prog-description { color: var(--text, #344054); line-height: 1.55; margin: 9px 0; }
+
+.catalogue-cta { grid-column: 1 / -1; display: flex; justify-content: center; padding: 12px 0 4px; }
