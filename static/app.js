@@ -258,10 +258,32 @@ async function loadCatalogue() {
       return;
     }
     data.programs.forEach((p) => {
-      const card = el("div", "prog");
+      const card = el("article", "prog");
+      if (p.image_url) {
+        const image = document.createElement("img");
+        image.className = "prog-image";
+        image.src = p.image_url;
+        image.alt = p.name + " internship track";
+        image.loading = "lazy";
+        card.appendChild(image);
+      }
+      const meta = el("div", "prog-meta");
+      meta.appendChild(el("span", "verified", "Verified"));
+      meta.appendChild(el("span", "muted small", "Internship"));
+      card.appendChild(meta);
       card.appendChild(el("h3", null, p.name));
-      card.appendChild(el("p", "muted small", p.track + " · " + p.min_level + " level · " + p.status));
+      if (p.description) card.appendChild(el("p", "prog-description", p.description));
+      card.appendChild(el("p", "muted small", p.track + " · " + p.min_level + " level"));
       card.appendChild(tags(Object.keys(p.required_skills), "have"));
+      if (p.apply_url) {
+        const actions = el("div", "rec-actions");
+        const a = el("a", "btn", "Apply Now");
+        a.href = p.apply_url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        actions.appendChild(a);
+        card.appendChild(actions);
+      }
       list.appendChild(card);
     });
   } catch (e) {
