@@ -286,6 +286,13 @@ async function loadCatalogue() {
       }
       list.appendChild(card);
     });
+    const journey = el("div", "catalogue-cta");
+    const journeyLink = el("a", "btn", "Begin your journey");
+    journeyLink.href = "https://forms.gle/zNGnQWfTZMxNCuRc9";
+    journeyLink.target = "_blank";
+    journeyLink.rel = "noopener noreferrer";
+    journey.appendChild(journeyLink);
+    list.appendChild(journey);
   } catch (e) {
     list.textContent = "";
     list.appendChild(el("p", "status error", "Could not load programs. " + e.message));
