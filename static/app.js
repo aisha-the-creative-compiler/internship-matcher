@@ -248,11 +248,11 @@ async function loadCatalogue() {
   try {
     const data = await getJSON("/api/programs");
     list.textContent = "";
-    if (!data.catalogue_verified) {
-      const note = $("catalogue-note");
-      note.hidden = false;
-      note.textContent = "Sample catalogue shown for demo purposes. Replace data/programs.json with the official programs.";
-    }
+    const note = $("catalogue-note");
+    note.hidden = Boolean(data.catalogue_verified);
+    note.textContent = data.catalogue_verified
+      ? ""
+      : "Sample catalogue shown for demo purposes. Replace data/programs.json with the official programs.";
     if (!data.programs.length) {
       list.appendChild(el("p", "muted", "No programs are available right now."));
       return;
