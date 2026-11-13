@@ -371,7 +371,6 @@ function renderDemoProfiles() {
 
 $("upload-btn").addEventListener("click", uploadCV);
 $("text-btn").addEventListener("click", analyseText);
-renderDemoProfiles();
 $("match-btn").addEventListener("click", runMatch);
 loadSkills();
 loadCatalogue();
